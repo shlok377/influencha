@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Process Infographic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #ffffff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1e293b;
+      min-height: 100vh;
+      padding: 48px 16px 80px;
+    }
+
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+    }
+
+    .main-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      text-align: center;
+      letter-spacing: 2px;
+      color: #2b3a55;
+      text-transform: uppercase;
+      margin-bottom: 52px;
+    }
+
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .timeline-card {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-radius: 14px;
+      padding: 22px 24px 22px 28px;
+      background-color: var(--card-bg);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }
+
+    /* Upward-pointing arrow badge */
+    .card-arrow {
+      position: absolute;
+      top: -24px;
+      right: calc(24px + 55px);
+      transform: translateX(50%);
+      width: 78px;
+      height: 25px;
+      background-color: var(--card-bg);
+      clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+      z-index: 2;
+    }
+
+    .card-content {
+      flex: 1;
+      padding-right: 20px;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .card-command {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 26px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      line-height: 1.1;
+    }
+
+    .card-role {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: #ffffff;
+      opacity: 0.95;
+    }
+
+    .card-desc {
+      font-size: 15px;
+      line-height: 1.5;
+      color: #18202a;
+      font-weight: 500;
+    }
+
+    .card-desc strong {
+      color: #0f172a;
+      font-weight: 700;
+    }
+
+    .code-pill {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      background-color: rgba(0, 0, 0, 0.18);
+      color: #ffffff;
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.88em;
+      font-weight: 600;
+    }
+
+    .card-badge-col {
+      width: 110px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      user-select: none;
+    }
+
+    .step-number {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 34px;
+      font-weight: 900;
+      color: #18202a;
+      line-height: 1;
+    }
+
+    .step-divider {
+      width: 44px;
+      height: 3.5px;
+      background-color: #ffffff;
+      border-radius: 2px;
+      margin-top: 7px;
+    }
+
+    /* 10 Curated Colors matching the inspiration aesthetic */
+    .card-01 { --card-bg: #fa6d69; }
+    .card-02 { --card-bg: #94a383; }
+    .card-03 { --card-bg: #82a8cb; }
+    .card-04 { --card-bg: #d79768; }
+    .card-05 { --card-bg: #84c599; }
+    .card-06 { --card-bg: #9c8cb4; }
+    .card-07 { --card-bg: #deb05a; }
+    .card-08 { --card-bg: #68b6b2; }
+    .card-09 { --card-bg: #d87786; }
+    .card-10 { --card-bg: #68a68d; }
+
+    @media (max-width: 640px) {
+      body {
+        padding: 32px 12px 60px;
+      }
+      .main-title {
+        font-size: 26px;
+        margin-bottom: 40px;
+      }
+      .timeline-card {
+        padding: 18px 16px 18px 18px;
+      }
+      .card-command {
+        font-size: 22px;
+      }
+      .card-role {
+        font-size: 16px;
+      }
+      .card-desc {
+        font-size: 14px;
+      }
+      .card-badge-col {
+        width: 80px;
+      }
+      .step-number {
+        font-size: 28px;
+      }
+      .card-arrow {
+        right: calc(16px + 40px);
+        width: 64px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="main-title">PROCESS INFOGRAPHIC</h1>
+
+    <div class="timeline">
+
+      <!-- Step 01 -->
+      <div class="timeline-card card-01">
+        <div class="card-arrow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="card-command">/make-post</span>
+            <span class="card-role">— Visual Guide</span>
+          </div>
+          <p class="card-desc">Generates and launches a visual HTML index in the default browser mapping out all skills and when to use each.</p>
+        </div>
+        <div class="card-badge-col">
+          <div class="step-number">01</div>
+          <div class="step-divider"></div>
+        </div>
+      </div>
+
+      <!-- Step 02 -->
+      <div class="timeline-card card-02">
+        <div class="card-arrow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="card-command">/brand</span>
+            <span class="card-role">— Identity Onboarding</span>
+          </div>
+          <p class="card-desc">Conducts the 4-part interview (Niche, Vibe, Palette, Types) and establishes/refines <code class="code-pill">brand.md</code>.</p>
+        </div>
+        <div class="card-badge-col">
+          <div class="step-number">02</div>
+          <div class="step-divider"></div>
+        </div>
+      </div>
+
+      <!-- Step 03 -->
+      <div class="timeline-card card-03">
+        <div class="card-arrow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="card-command">/trend-scout</span>
+            <span class="card-role">— Market Discovery</span>
+          </div>
+          <p class="card-desc">Researches trending angles, viral hooks, and high-resonance themes into <code class="code-pill">ideas.md</code>.</p>
+        </div>
+        <div class="card-badge-col">
+          <div class="step-number">03</div>
+          <div class="step-divider"></div>
+        </div>
+      </div>
+
+      <!-- Step 04 -->
+      <div class="timeline-card card-04">
+        <div class="card-arrow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="card-command">/copy-hook</span>
+            <span class="card-role">— Copywriting</span>
+          </div>
+          <p class="card-desc">Crafts on-card micro-copy, scroll-stopping headline hooks, captions, and hashtag groups in <code class="code-pill">caption.md</code>.</p>
+        </div>
+        <div class="card-badge-col">
+          <div class="step-number">04</div>
+          <div class="step-divider"></div>
+        </div>
+      </div>
+
+      <!-- Step 05 -->
+      <div class="timeline-card card-05">
+        <div class="card-arrow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="card-command">/design-html</span>
+            <span class="card-role">— Code Graphic Artboard</span>
+          </div>
+          <p class="card-desc">Codes pure HTML/CSS graphics (1080px canvas, Google Fonts, CSS gradients, inline SVGs). <strong>Explicitly prohibits dashboards or web apps.</strong></p>
+        </div>
+        <div class="card-badge-col">
+          <div class="step-number">05</div>
+          <div class="step-divider"></div>
+        </div>
+      </div>
+
+      <!-- Step 06 -->
+      <div class="timeline-card card-06">
+        <div class="card-arrow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="card-command">/render-post</span>
+            <span class="card-role">— Headless Compiler</span>
+          </div>
+          <p class="card-desc">Executes headless Chromium to compile <code class="code-pill">index.html</code> into high-resolution <code class="code-pill">post.png</code> with font preloading.</p>
+        </div>
+        <div class="card-badge-col">
+          <div class="step-number">06</div>
+          <div class="step-divider"></div>
+        </div>
+      </div>
+
+      <!-- Step 07 -->
+      <div class="timeline-card card-07">
+        <div class="card-arrow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="card-command">/carousel-split</span>
+            <span class="card-role">— Multi-Slide Decks</span>
+          </div>
+          <p class="card-desc">Generates structured sequential slides (<code class="code-pill">slide-01.html</code>, etc.) and batch-renders them into PNG sequences.</p>
+        </div>
+        <div class="card-badge-col">
+          <div class="step-number">07</div>
+          <div class="step-divider"></div>
+        </div>
+      </div>
+
+      <!-- Step 08 -->
+      <div class="timeline-card card-08">
+        <div class="card-arrow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="card-command">/critique</span>
+            <span class="card-role">— Taste & Review</span>
+          </div>
+          <p class="card-desc">Reviews post drafts with you, applies visual tweaks, and curates approved patterns and anti-patterns into <code class="code-pill">likes.md</code>.</p>
+        </div>
+        <div class="card-badge-col">
+          <div class="step-number">08</div>
+          <div class="step-divider"></div>
+        </div>
+      </div>
+
+      <!-- Step 09 -->
+      <div class="timeline-card card-09">
+        <div class="card-arrow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="card-command">/grid-preview</span>
+            <span class="card-role">— Feed Harmony</span>
+          </div>
+          <p class="card-desc">Simulates an Instagram 3x3 profile grid locally to inspect color rhythm and typographic cadence.</p>
+        </div>
+        <div class="card-badge-col">
+          <div class="step-number">09</div>
+          <div class="step-divider"></div>
+        </div>
+      </div>
+
+      <!-- Step 10 -->
+      <div class="timeline-card card-10">
+        <div class="card-arrow"></div>
+        <div class="card-content">
+          <div class="card-header">
+            <span class="card-command">/publish-guide</span>
+            <span class="card-role">— Publishing Copilot</span>
+          </div>
+          <p class="card-desc">Formats copy-paste captions, image paths, alt-text, and guides upload on Instagram Web.</p>
+        </div>
+        <div class="card-badge-col">
+          <div class="step-number">10</div>
+          <div class="step-divider"></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
