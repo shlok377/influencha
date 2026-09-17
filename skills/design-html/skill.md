@@ -1,6 +1,6 @@
 ---
 name: design-html
-description: Code a high-craft, standalone Instagram graphic using pure HTML and CSS. Use when generating the visual layout for a post in index.html. Strictly designs a static graphic artboard, never a web dashboard.
+description: Exclusively code the HTML/CSS layout for a static Instagram graphic artboard in index.html. Never renders images and never builds web dashboards.
 ---
 
 1. **Hard Guardrail: Zero Dashboards, Zero Web Apps**
@@ -8,11 +8,16 @@ description: Code a high-craft, standalone Instagram graphic using pure HTML and
    - **STRICT PROHIBITION**: NEVER build an Instagram dashboard, web app, feed viewer, UI kit, admin panel, navbar, or interactive web page.
    - The output must be an isolated, static visual graphic enclosed in an exact 1080px artboard with zero runtime JavaScript.
 
-2. Read `brand.md` for typography pairings, color palette tokens, and aesthetic archetype. Read `likes.md` to incorporate approved visual treatments and strictly avoid anything in `Avoid / Disliked`.
+2. **Hard Guardrail: Code Only, Never Render Images**
+   - This skill is **strictly for HTML and CSS authoring**.
+   - **STRICT PROHIBITION**: NEVER execute Chromium, headless browsers, screenshot commands, or generate PNG files in this skill.
+   - Rendering is the exclusive domain of `/render-post` (or `/carousel-split`). Stop immediately once `index.html` is written.
 
-3. Locate or create the target post folder: `posts/YYYY-MM-DD_<topic-slug>/`. Read `caption.md` in that folder for the exact on-card copy (kicker, headline, body micro-copy, and brand handle).
+3. Read `brand.md` for typography pairings, color palette tokens, and aesthetic archetype. Read `likes.md` to incorporate approved visual treatments and strictly avoid anything in `Avoid / Disliked`.
 
-4. Construct a completely self-contained `index.html` file using this technical specification:
+4. Locate or create the target post folder: `posts/YYYY-MM-DD_<topic-slug>/`. Read `caption.md` in that folder for the exact on-card copy (kicker, headline, body micro-copy, and brand handle).
+
+5. Construct a completely self-contained `index.html` file using this technical specification:
    - **Fixed Artboard Canvas**:
      ```html
      <!DOCTYPE html>
@@ -50,12 +55,12 @@ description: Code a high-craft, standalone Instagram graphic using pure HTML and
      </html>
      ```
 
-5. Apply visual craftsmanship:
+6. Apply visual craftsmanship:
    - **Typography**: Dramatic scale contrast between headline and body. Set tight line-height (`0.95` to `1.15`) for display titles, generous line-height (`1.4` to `1.6`) for body. Use deliberate letter-spacing (`letter-spacing: -0.03em` for bold titles, `+0.08em` for small uppercase kickers).
    - **Color & Depth**: Use rich color tokens from `brand.md`. Layer subtle linear or radial gradients, subtle glow halos, frosted glass panels (`backdrop-filter: blur(20px)`), and crisp hairline borders (`1px solid rgba(255,255,255,0.12)`).
    - **Accents**: Use inline SVG for icons, geometric accents, badges, or quotes. Do not use external image URLs that can fail or load slowly.
    - **Branding**: Include a subtle brand watermark or handle in the top or bottom margin.
 
-6. Save the file to `posts/YYYY-MM-DD_<topic-slug>/index.html`. Verify that the file contains all necessary styles inline or in `<style>` blocks.
+7. Save the file to `posts/YYYY-MM-DD_<topic-slug>/index.html`. Verify that the file contains all necessary styles inline or in `<style>` blocks.
 
-7. Signal to the user that the code draft is ready and prompt them to run `/render-post` to compile it to high-res PNG.
+8. **Completion Boundary**: Stop here. Do not execute any bash screenshot commands or image tools. Inform the user that `index.html` has been saved and direct them to run `/render-post` to compile it to PNG.
