@@ -13,11 +13,19 @@ description: Exclusively code the HTML/CSS layout for a static Instagram graphic
    - **STRICT PROHIBITION**: NEVER execute Chromium, headless browsers, screenshot commands, or generate PNG files in this skill.
    - Rendering is the exclusive domain of `/render-post` (or `/carousel-split`). Stop immediately once `index.html` is written.
 
-3. Read `brand.md` for typography pairings, color palette tokens, and aesthetic archetype. Read `likes.md` to incorporate approved visual treatments and strictly avoid anything in `Avoid / Disliked`.
+3. **Hard Guardrail: Universal Anti-Slop Enforcement**
+   - Fetch the universal anti-slop rules from `https://raw.githubusercontent.com/shlok377/influencha/anti-slop/global_dislike.md`.
+   - **STRICT PROHIBITION**:
+     - *Colors*: No purple-to-blue gradients, gradient hero text (`-webkit-background-clip`), neon colors, raw pastels, or raw white `#ffffff` backgrounds.
+     - *Effects*: No glassmorphism (`backdrop-filter`), soft blurry drop-shadows, radial glow orbs, dot grids, colored left stripes, or soft 12px pill boxes.
+     - *Layout*: No 3-icon box rows, 3-feature card grids, 3-pricing tiers, badge hovering above headline, checkmark bullets, or untouched Shadcn UI.
+     - *Assets*: No Lucide icons everywhere, sparkle icons, or emojis in visual text.
 
-4. Locate or create the target post folder: `posts/YYYY-MM-DD_<topic-slug>/`. Read `caption.md` in that folder for the exact on-card copy (kicker, headline, body micro-copy, and brand handle).
+4. Read `brand.md` for typography pairings, color palette tokens, and aesthetic archetype. Read `likes.md` to incorporate approved visual treatments and strictly avoid anything in `Avoid / Disliked`.
 
-5. Construct a completely self-contained `index.html` file using this technical specification:
+5. Locate or create the target post folder: `posts/YYYY-MM-DD_<topic-slug>/`. Read `caption.md` in that folder for the exact on-card copy (kicker, headline, body micro-copy, and brand handle).
+
+6. Construct a completely self-contained `index.html` file using this technical specification:
    - **Fixed Artboard Canvas**:
      ```html
      <!DOCTYPE html>
@@ -55,12 +63,12 @@ description: Exclusively code the HTML/CSS layout for a static Instagram graphic
      </html>
      ```
 
-6. Apply visual craftsmanship:
+7. Apply visual craftsmanship (filtered against anti-slop rules):
    - **Typography**: Dramatic scale contrast between headline and body. Set tight line-height (`0.95` to `1.15`) for display titles, generous line-height (`1.4` to `1.6`) for body. Use deliberate letter-spacing (`letter-spacing: -0.03em` for bold titles, `+0.08em` for small uppercase kickers).
-   - **Color & Depth**: Use rich color tokens from `brand.md`. Layer subtle linear or radial gradients, subtle glow halos, frosted glass panels (`backdrop-filter: blur(20px)`), and crisp hairline borders (`1px solid rgba(255,255,255,0.12)`).
-   - **Accents**: Use inline SVG for icons, geometric accents, badges, or quotes. Do not use external image URLs that can fail or load slowly.
+   - **Color & Depth**: Use rich color tokens from `brand.md`. Layer crisp hairline borders (`1px solid rgba(255,255,255,0.12)`), subtle tone-on-tone overlays, and architectural grid alignments.
+   - **Accents**: Use inline SVG for custom geometric accents, badges, or quotes. Do not use external image URLs or Lucide icon fonts.
    - **Branding**: Include a subtle brand watermark or handle in the top or bottom margin.
 
-7. Save the file to `posts/YYYY-MM-DD_<topic-slug>/index.html`. Verify that the file contains all necessary styles inline or in `<style>` blocks.
+8. Save the file to `posts/YYYY-MM-DD_<topic-slug>/index.html`. Verify that the file contains all necessary styles inline or in `<style>` blocks.
 
-8. **Completion Boundary**: Stop here. Do not execute any bash screenshot commands or image tools. Inform the user that `index.html` has been saved and direct them to run `/render-post` to compile it to PNG.
+9. **Completion Boundary**: Stop here. Do not execute any bash screenshot commands or image tools. Inform the user that `index.html` has been saved and direct them to run `/render-post` to compile it to PNG.
