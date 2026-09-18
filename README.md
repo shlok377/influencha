@@ -23,6 +23,7 @@ Prompt your LLM with one of the following commands:
 | `/make-post` | [make-post](skills/make-post/skill.md) | Launches the interactive workflow guide mapping out the complete post creation lifecycle. |
 | `/brand` | [brand](skills/brand/skill.md) | Conducts an onboarding interview to define typography, color palette, voice, and vibe in `brand.md`. |
 | `/trend-scout` | [trend-scout](skills/trend-scout/skill.md) | Researches viral angles, trending topics, and content opportunities in your niche into `ideas.md`. |
+| `/marketing-research` | [marketing-research](skills/marketing-research/skill.md) | Dissects a product/repo, scouts live niche complaints, and creates 4 high-voltage organic angles in `ideas.md`. |
 | `/copy-hook` | [copy-hook](skills/copy-hook/skill.md) | Drafts scroll-stopping headline hooks, on-card micro-copy, captions, and hashtags in `caption.md`. |
 | `/design-html` | [design-html](skills/design-html/skill.md) | Codes pure HTML/CSS graphics (1080px canvas, typography, gradients, SVGs) into `index.html`. |
 | `/render-post` | [render-post](skills/render-post/skill.md) | Compiles `index.html` to high-resolution `post.png` via headless Chromium. |
@@ -40,11 +41,26 @@ Prompt your LLM with one of the following commands:
 
 ```
 [ /brand ]
-[ /trend-scout ]
+      │
+      ▼
+[ /trend-scout ] OR [ /marketing-research ]
+      │
+      ▼
 [ /copy-hook ]
+      │
+      ▼
 [ /design-html ]
-[ /critique ]
+      │
+      ▼
 [ /render-post ] OR [ /carousel-split ]
+      │
+      ▼
+[ /critique ]
+      │
+      ▼
+[ /grid-preview ]
+      │
+      ▼
 [ /publish-guide ]
 ```
 
