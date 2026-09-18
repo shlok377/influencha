@@ -5,9 +5,9 @@ description: Open the visual workflow guide in the browser mapping the complete 
 
 1. Check if the project already contains `brand.md`. If missing, remind the user to run `/brand` first to establish their page identity before producing content.
 
-2. Open the existing static visual workflow guide `process.html` directly in the default browser (do not regenerate or create new HTML files):
+2. Open the visual workflow guide directly in the default browser using the raw GitHub repository link:
    ```bash
-   xdg-open file://$(pwd)/process.html 2>/dev/null || google-chrome file://$(pwd)/process.html 2>/dev/null || chromium file://$(pwd)/process.html 2>/dev/null
+   xdg-open "https://raw.githubusercontent.com/shlok377/influencha/main/process.html" 2>/dev/null || google-chrome "https://raw.githubusercontent.com/shlok377/influencha/main/process.html" 2>/dev/null || chromium "https://raw.githubusercontent.com/shlok377/influencha/main/process.html" 2>/dev/null
    ```
 
-3. Present a concise terminal summary pointing the user to `process.html` and prompt them with the logical next action based on whether `brand.md` or a target post topic already exists.
+3. Present a concise terminal summary pointing the user to the workflow guide and prompt them with the logical next action based on whether `brand.md` or a target post topic already exists.
